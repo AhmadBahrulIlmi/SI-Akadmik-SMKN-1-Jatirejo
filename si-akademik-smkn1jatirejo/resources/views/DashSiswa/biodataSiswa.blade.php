@@ -82,39 +82,39 @@
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">ID</label>
-                            <input class="form-control" type="text" name="" disabled value="2002021">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->id_siswa }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="" disabled value="Ahmad Bahrul Ilmi">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->nama }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Jurusan</label>
-                            <input class="form-control" type="text" name="" disabled value="Multimedia">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->tb_kelas->tb_datajurusan->nama_jurusan }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Jenis Kelamin</label>
-                            <input class="form-control" type="text" name="" disabled value="Laki Laki">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->jenis_kelamin }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Tanggal Lahir</label>
-                            <input class="form-control" type="text" name="" disabled value="10-09-2002">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->tgl_lahir }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Agama</label>
-                            <input class="form-control" type="text" name="" disabled value="Islam">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->agama }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Alamat</label>
-                            <input class="form-control" type="text" name="" disabled value="Mojokerto">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->alamat }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Telepon</label>
-                            <input class="form-control" type="text" name="" disabled value="087851088335">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->no_tlp }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Nama Wali</label>
-                            <input class="form-control" type="text" name="" disabled value="Sunyoto">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->wali->nama }}">
                         </div>
                     </form>
                 </div>

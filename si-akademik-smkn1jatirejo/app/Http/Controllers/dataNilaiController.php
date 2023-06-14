@@ -10,6 +10,13 @@ use PDF;
 
 class dataNilaiController extends Controller
 {
+    public function index()
+    {
+        $data = array(
+            "data_mapel" => tb_datamapel::all(),
+        );
+        return view('DashSiswa.nilaiSiswa', $data);
+    }
     public function nilai()
     {
         $tb_nilai = tb_datanilai::get();

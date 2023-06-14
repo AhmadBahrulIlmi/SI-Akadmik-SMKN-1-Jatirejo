@@ -11,5 +11,12 @@ class tb_datamapel extends Model
     protected $guarded = [];
     protected $primaryKey = 'id_mapel';
     protected $keyType = 'string';
-
+    public function nilai()
+    {
+        return $this->hasMany('App\Models\tb_datanilai', 'id_mapel', 'id_mapel');
+    }
+    public function login()
+    {
+        return $this->belongsTo('App\Models\LoginModel', 'id_user', 'id_user');
+    }
 }

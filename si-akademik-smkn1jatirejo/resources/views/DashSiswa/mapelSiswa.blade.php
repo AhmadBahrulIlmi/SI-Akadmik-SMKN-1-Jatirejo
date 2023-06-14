@@ -76,22 +76,14 @@
             <div class="card">
                 <div class="card-body" style="width: 970px">
                     <form action="#" method="POST" enctype="multipart/form-data">
-                        @csrf
                         <div class="mb-4">
                             <label class="text-blue">Mata Pelajaran</label>
                         </div>
-                        <div class="mb-2">
-                            <input class="form-control" type="text" name="" disabled value="Bahasa Indonesia">
-                        </div>
-                        <div class="mb-2">
-                            <input class="form-control" type="text" name="" disabled value="Matematika">
-                        </div>
-                        <div class="mb-2">
-                            <input class="form-control" type="text" name="" disabled value="Bahasa Inggris">
-                        </div>
-                        <div class="mb-2">
-                            <input class="form-control" type="text" name="" disabled value="PPKN">
-                        </div>
+                        @foreach ($data_mapel as $mp)
+                          <div class="mb-2">
+                            <input class="form-control" type="text" name="" disabled value="{{ $mp->nama_mapel }}">
+                          </div>
+                        @endforeach
                     </form>
                 </div>
             </div>

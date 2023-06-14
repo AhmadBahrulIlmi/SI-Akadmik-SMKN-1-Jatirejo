@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2023 pada 16.22
+-- Host: 127.0.0.1:3306
+-- Waktu pembuatan: 14 Jun 2023 pada 16.25
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -209,7 +209,11 @@ CREATE TABLE `tb_nilai` (
 --
 
 INSERT INTO `tb_nilai` (`id_nilai`, `semester`, `tugas1`, `tugas2`, `tugas3`, `uts`, `uas`, `id_siswa`, `id_guru`, `id_mapel`, `updated_at`, `created_at`) VALUES
-(27, 'Genap', 80, 90, 90, 99, 88, 2002021, NULL, 113, '2023-06-03 05:58:46', '2023-06-03 05:58:46');
+(27, 'Genap', 80, 90, 90, 99, 88, 2002021, NULL, 111, '2023-06-03 05:58:46', '2023-06-03 05:58:46'),
+(31, 'Genap', 80, 88, 89, 99, 88, 2002021, NULL, 112, '2023-06-03 05:58:46', '2023-06-03 05:58:46'),
+(32, 'Genap', 80, 90, 90, 99, 88, 2002021, NULL, 113, '2023-06-03 05:58:46', '2023-06-03 05:58:46'),
+(34, 'Genap', 80, 88, 79, 99, 88, 2002021, NULL, 114, '2023-06-03 05:58:46', '2023-06-03 05:58:46'),
+(35, 'Genap', 78, 90, 80, 99, 99, 2002021, NULL, 115, '2023-06-03 05:58:46', '2023-06-03 05:58:46');
 
 -- --------------------------------------------------------
 
@@ -236,7 +240,7 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id_siswa`, `nama`, `jenis_kelamin`, `tgl_lahir`, `agama`, `alamat`, `no_tlp`, `id_user`, `id_kelas`, `updated_at`, `created_at`) VALUES
-(2002021, 'Ahmad Bahrul Ilmi', 'Laki-laki', '2002-09-10', 'Islam', 'Mojokerto', '087851088335', NULL, 101, '2023-06-02 10:00:04', '2023-06-02 10:00:04'),
+(2002021, 'Ahmad Bahrul Ilmi', 'Laki-laki', '2002-09-10', 'Islam', 'Mojokerto', '087851088335', 'U02', 101, '2023-06-02 10:00:04', '2023-06-02 10:00:04'),
 (2002022, 'Ahmad Rasyid Habibi', 'Laki-laki', '2002-08-22', 'Islam', 'Mojokerto', '088125678666', NULL, 101, '2023-06-02 10:00:58', '2023-06-02 10:00:58'),
 (2002023, 'Mohammad Akbar Ilham', 'Laki-laki', '2002-03-02', 'Islam', 'Mojokerto', '087856432575', NULL, 101, '2023-06-02 10:02:48', '2023-06-02 10:02:48'),
 (2002024, 'Khairani Nurul Ummah', 'Perempuan', '2002-06-04', 'Islam', 'Mojokerto', '086846579796', NULL, 101, '2023-06-02 10:01:51', '2023-06-02 10:01:51'),
@@ -424,7 +428,7 @@ ALTER TABLE `tb_jadwal`
 -- AUTO_INCREMENT untuk tabel `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

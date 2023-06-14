@@ -82,15 +82,15 @@
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="" disabled value="Sunyoto">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->wali->nama }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Alamat</label>
-                            <input class="form-control" type="text" name="" disabled value="Mojokerto">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->wali->alamat }}">
                         </div>
                         <div class="mb-2">
                             <label for="id_siswa" class="form-label">Telepon</label>
-                            <input class="form-control" type="text" name="" disabled value="087674353255">
+                            <input class="form-control" type="text" name="" disabled value="{{ auth()->user()->siswa->wali->no_telp }}">
                         </div>
                     </form>
                 </div>

@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\tb_datamapel;
 use App\Models\tb_datanilai;
+use App\Models\tb_siswa;
+use Illuminate\Http\Request;
 
 class layoutGuruController extends Controller
 {
     public function dataSiswa_Guru()
     {
-        return view('DashGuru.dataSiswa_Guru');
+        $data = array(
+            "data_siswa" => tb_siswa::all(),
+        );
+        return view('DashGuru.dataSiswa_Guru', $data);
     }
     public function nilaiSiswaGuru()
     {
@@ -22,7 +27,10 @@ class layoutGuruController extends Controller
     }
     public function listMapel()
     {
-        return view('DashGuru.listMapel');
+        $data = array(
+            "data_mapel" => tb_datamapel::all(),
+        );
+        return view('DashGuru.listMapel', $data);
     }
     public function listJadwal_Guru()
     {

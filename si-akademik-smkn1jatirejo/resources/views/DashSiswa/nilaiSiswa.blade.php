@@ -75,19 +75,7 @@
         <div class="row ml-2">
             <div class="card">
                 <div class="card-body" style="width: 970px">
-                    <div class="dropdown">
-                        <h5>Nilai Siswa</h5>
-                        <button class="btn btn-secondary btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 930px">
-                          Mata Pelajaran
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 930px">
-                          <a class="dropdown-item" href="#">Bahasa Indonesia</a>
-                          <a class="dropdown-item" href="#">Matematika</a>
-                          <a class="dropdown-item" href="#">Bahasa Inggris</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="card-body" style="width: 970px">
+                  <h5>Nilai Siswa</h5>
                     <table class="table ">
                         <thead>
                             <tr>
@@ -100,14 +88,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                          @php
+                            $id_user = auth()->user()->siswa->id_siswa; 
+                          @endphp
+                          @foreach ($data_mapel as $mp)
                             <tr>
-                                <td>Bahasa Inggris</td>
-                                <td>90</td>
-                                <td>90</td>
-                                <td>90</td>
-                                <td>90</td>
-                                <td>98</td>
+                              <td>{{ $mp->nama_mapel }}</td>
+                              @foreach ($mp->nilai as $nl)
+                                  @if ($nl->id_siswa == $id_user)
+                                    <td>{{ ($nl->tugas1 == null) ? 0 : $nl->tugas1 }}</td>
+                                    <td>{{ ($nl->tugas2 == null) ? 0 : $nl->tugas2 }}</td>
+                                    <td>{{ ($nl->tugas3 == null) ? 0 : $nl->tugas3 }}</td>
+                                    <td>{{ ($nl->uts == null) ? 0 : $nl->uts }}</td>
+                                    <td>{{ ($nl->uas == null) ? 0 : $nl->uas }}</td>
+                                  @endif
+                              @endforeach
                             </tr>
+                          @endforeach
                         </tbody>
                     </table>
                 </div>

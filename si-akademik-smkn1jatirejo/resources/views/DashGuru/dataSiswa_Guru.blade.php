@@ -87,59 +87,19 @@
                               <th scope="col">No Tlp</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <th>2002021</th>
-                            <th>Ahmad Bahrul Ilmi</th>
-                            <th>Laki Laki</th>
-                            <th>10-09-2002</th>
-                            <th>Islam</th>
-                            <th>Mojokerto</th>
-                            <th>087851088335</th>
-                        </tr>
-                        <tr>
-                          <th>2002022</th>
-                          <th>Ahmad Rasyid Habibi</th>
-                          <th>Laki Laki</th>
-                          <th>22-08-2002</th>
-                          <th>Islam</th>
-                          <th>Mojokerto</th>
-                          <th>087823431232</th>
-                        </tr>
-                        <tr>
-                          <th>2002023</th>
-                          <th>Mohammad Akbar Ilham</th>
-                          <th>Laki Laki</th>
-                          <th>02-03-2002</th>
-                          <th>Islam</th>
-                          <th>Mojokerto</th>
-                          <th>087823431674</th>
-                        </tr>
-                        <tr>
-                          <th>2002024</th>
-                          <th>Kairani Nurul Ummah</th>
-                          <th>Perempuan</th>
-                          <th>04-06-2002</th>
-                          <th>Islam</th>
-                          <th>Mojokerto</th>
-                          <th>087824562764</th>
-                        </tr>
-                        {{-- <tbody>
-                            @foreach ($tb_siswa as $data)
-                                <tr>
-                                  <th scope="data">{{ $data->id_siswa }}</th>
-                                  <td>{{ $data->nama }}</td>
-                                  <td>{{ $data->jenis_kelamin}}</td>
-                                  <td>{{ $data->tgl_lahir }}</td>
-                                  <td>{{ $data->agama }}</td>
-                                  <td>{{ $data->alamat }}</td>
-                                  <td>{{ $data->no_tlp }}</td>
-                                  <td>
-                                    <a href="/datasiswaedit/{{ $data->id_siswa }}"" type="button" class="btn btn-primary">Ubah</a>
-                                    <a href="/datasiswadelete/{{ $data->id_siswa }}" type="button" class="btn btn-danger">Hapus</a>
-                                  </td>
-                                </tr>
-                            @endforeach
-                        </tbody> --}}
+                        @foreach ($data_siswa as $data)
+                          <div class="mb-2">
+                            <tr>
+                              <th>{{ $data->id_siswa }}</th>
+                              <th>{{ $data->nama }}</th>
+                              <th>{{ $data->jenis_kelamin }}</th>
+                              <th>{{ $data->tgl_lahir }}</th>
+                              <th>{{ $data->agama }}</th>
+                              <th>{{ $data->alamat }}</th>
+                              <th>{{ $data->no_tlp }}</th>
+                          </tr>
+                          </div>
+                        @endforeach
                     </table>
                 </div>
             </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tb_datamapel;
+use App\Models\tb_datanilai;
 use Illuminate\Http\Request;
 
 class layoutSiswaController extends Controller
@@ -16,7 +18,11 @@ class layoutSiswaController extends Controller
     }
     public function nilaiSiswa()
     {
-        return view('DashSiswa.nilaiSiswa');
+        $data = array(
+            "data_mapel" => tb_datamapel::all(),
+            "data_nilai" => tb_datanilai::all()
+        );
+        return view('DashSiswa.nilaiSiswa', $data);
     }
     public function jadwalSiswa()
     {
@@ -24,7 +30,10 @@ class layoutSiswaController extends Controller
     }
     public function mapelSiswa()
     {
-        return view('DashSiswa.mapelSiswa');
+        $data = array(
+            "data_mapel" => tb_datamapel::all(),
+        );
+        return view('DashSiswa.mapelSiswa', $data);
     }
     public function kelasSiswa()
     {
